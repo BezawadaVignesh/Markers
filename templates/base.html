@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% block title %}{% endblock %}
+    <link rel="stylesheet" href="{%  static 'css/main.css'  %}"></link>
+</head>
+<body>
+	{% block header %}{% endblock %}
+	<div id="content" class="content">
+		<h1 id="homePageTitle">Markers</h1>
+		<p>Showing data in the form of charts</p>
+		<p id="stuff">This website is disigned for visulization of data with the help of charts, through which data can be abserved with details</p>
+		<button onclick="location.href = '#choose'">Get Started</button>
+	</div>
+    {% block contant %}{% endblock %}
+	
+</body>
+</html>

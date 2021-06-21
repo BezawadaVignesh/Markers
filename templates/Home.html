@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% load static %}
+	{% block title %}
+	<title>Markers</title>
+	<!--link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/0b1453f29b.js" crossorigin="anonymous"></script>
+	<link rel='icon' href='{% static "img/logo.png" %}' type="image/png">
+	{% endblock %}
+{% block header %}
+	<header class="header">
+		<h1>Markers</h1>
+		<ul>
+			<li><a class="h active" id="homeNav" href="#">Home</a></li>
+			<li><a class="h" id="aboutNav" href="#choose">About</a></li>
+			<li><a class="h" id="featuresNav"href="#features">Features</a></li>
+			<li><a class="h" id="contactNav" href="#contact">Contact</a></li>
+		</ul>
+	</header>
+{% endblock %}
+{% block contant %}
+	<div id="choose" class="choose">
+		<h1>Markers</h1>
+		<h1 id="chooseTitle" class="chooseTitle">About Us</h1>
+		<div class="chooseDesc">
+			<!--p><strong>Markers</strong> is an place where you can view data in form of chart<br>At <strong>Markers</strong>, we have charts on popular topics such.<br>Visualize unique things starting from Github repositories,<br>to things like Song Visualisation.</p-->
+			<h2>Comming soon..</h2>
+			<p>This site is under maintenance, sorry for inconvenience.</p>
+		</div>
+	</div>
+	<div id="features" class="features">
+		<div class="featuresTitle">
+			<h1>Popular chart</h1>
+		</div>
+		<div class="featureCardWrapper">
+			<div class="featureCard">
+				<h2>IDE</h2>
+				<p><br>Visualize Double Pendulum in a new and unique way!</p>
+				<button onclick="location.href = 'pendulum.html'">Take me there</button>
+			</div>
+			<div class="featureCard">
+				<h2>Covid</h2>
+				<p><br>Visualize any github repositories with each and every detail with graphs and more!</p>
+				<button onclick="location.href = {% url 'covid-chart' %}">Take me there</button>
+			</div>
+			<div class="featureCard">
+				<h2>Anime</h2>
+				<p><br>Visualize your own data (X and Y labels) with 4 types of graphs!</p>
+				<button onclick="{% url 'covid-chart' %}">Take me there</button>
+			</div>
+		</div>
+	</div>
+	<div id="contact" class="contact">
+		<div class="contactTitle">
+			<h1>Message Us</h1>
+			<p>Got some suggestion/ issues? We would like to <span>hear from you</span></p>
+		</div>
+		<div class="contactBlock">
+			<form method="post">
+				{% csrf_token %}
+				{{ form.as_p }}
+
+				<input type="submit" name="Send Message">
+			</form>
+			{% if messages %}
+			{% for message in messages %}
+				{% if message.tags %} <script>alert("{{ message }}")</script>{% endif %}
+			{% endfor %}
+			{% endif %}
+			<!--input id="nameInput" class="nameInput" placeholder="Your Name *">
+			<input id="emailInput" class="emailInput" placeholder="Your Email *">
+			<textarea id="msgInput" class="msgInput" placeholder="Your Message *"></textarea>
+			<button onclick="sendMsg();">Send Message</button-->
+		</div>
+	</div>
+	<div id="follow" class="follow">
+		<div class="followTitle">
+			<h1>Follow Us</h1>
+			<p>Stay updated about the latest updates of Vealize</p>
+		</div>
+		<div class="followBlock">
+			<div class="sm">
+				<i class="fab fa-facebook-f"></i>
+				<p>Facebook</p>
+			</div>
+			<div class="sm">
+				<i class="fab fa-instagram"></i>
+				<p>Instagram</p>
+			</div>
+			<div class="sm">
+				<i class="fab fa-twitter"></i>
+				<p>Twitter</p>
+			</div>
+			<div class="sm">
+				<i class="fab fa-youtube"></i>
+				<p>Youtube</p>
+			</div>
+			<div class="sm">
+				<i class="far fa-envelope"></i>
+				<p>Email</p>
+			</div>
+		</div>
+	</div>
+    <script type="text/css">
+        .features{
+            background: url({% static 'img/bg3.png' %});
+            background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+
+        }
+        .choose{
+            background-image: url("{% static 'img/bg2.png' %}");
+            background-repeat: no-repeat;
+	        background-position: right;
+        }
+        .content{
+            background: url({% static 'img/bg.png' %});
+            background-repeat: no-repeat;
+	        background-size: cover;
+        }
+    </script>
+
+	<script type="text/javascript">
+	var cat = $('.header').offset().top;
+
+	$(window).scroll(function() {                  
+	var cs = $(window).scrollTop(); 
+	if (cs > cat) {           
+	    $('.header').css({                      
+	        position: 'fixed',
+	        top: '0',
+	        left: '0',
+	        width: '100%',
+	        background: 'white'
+	    });
+	    $('.header').css("padding-top", "10px");
+	    $('.header').css("color", "black");
+	    $('.header').css("border-bottom", "1px solid #696969");
+	    $('.h').css("color", "black");
+	    $('.h.active').css("color", "#ff0158");
+	} else {                                   
+	    $('.header').css({                     
+	        position: 'relative',
+	        width: 'auto'
+	    });
+	    $('.header').css('background', '#03030e')
+	    $('.header').css("padding-top", "30px");
+	    $('.header').css("color", "white");
+	    $('.header').css("border-bottom", "none");
+	    $('.h').css("color", "white");
+	    $('.h.active').css("color", "#ff0158");
+	}
+	var ch = $('.choose').offset().top;
+	var hm = $('.content').offset().top;
+	var fe = $('.features').offset().top;
+	var co = $('.contact').offset().top;
+
+	if (cs >= (co - 150))
+	{
+		$('.active').removeClass('active')
+		$('#contactNav').addClass('active')
+	} else if (cs >= (fe - 100))
+	{
+		$('.active').removeClass('active')
+		$('#featuresNav').addClass('active')
+	} else if (cs >= (ch - 150))
+	{
+		$('.active').removeClass('active')
+		$('#aboutNav').addClass('active')
+	} else if (cs >= hm)
+	{
+		$('.active').removeClass('active')
+		$('#homeNav').addClass('active')
+	}
+	});
+	$('.fa-facebook-f').on('click', function(){location.href = '#'})
+	$('.fa-instagram').on('click', function(){location.href = '#'})
+	$('.fa-twitter').on('click', function(){location.href = '#'})
+	$('.fa-youtube').on('click', function(){location.href = '#'})
+	$('.fa-envelope').on('click', function(){location.href = '#'})
+	</script>
+	{% endblock %}

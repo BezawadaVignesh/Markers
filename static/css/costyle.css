@@ -1,0 +1,41 @@
+.part-1{
+	flex-direction: column;
+	width: 100%;
+
+}
+.part-1-1{
+	position: relative;
+	height: 50%;
+	display: flex;
+}
+.part-1-1-1{
+	position: relative;
+	width: 50%;
+}
+.part-1-1-2{
+	padding: 5% 5% 5% 5%;
+}
+.part-1-2{
+	position: relative;
+	padding-bottom: 200px;
+	padding-top: 50px;
+	max-width: 70%;
+	left:10%;
+	display: flex;
+	justify-content: space-evenly;
+	
+}
+.part-1-2 .bar-chart{
+	position: relative;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+}
+@media (max-width:750px) {
+	.part-1-2 .bar-chart{
+		position: relative;
+		min-height: 200px;
+		
+	}
+}

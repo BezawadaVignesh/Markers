@@ -1,0 +1,681 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;
+}
+
+header
+{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	text-align: center;
+	padding-top: 30px;
+	padding-left: 40px;
+	background: rgb(3, 3, 14);
+	z-index: 10000;
+	color: #fff;
+	user-select: none;
+	transition: .4s ease-in-out;
+}
+
+header h1
+{
+	margin-right: 60px;
+	cursor: pointer;
+}
+
+@media (min-width: 1000px) {
+	header h1 {
+		margin-right: 50%;
+	}
+	header ul li a{
+		margin-top: 100px;
+		margin-right: 100px;
+	}
+}
+
+header ul
+{
+	display: flex;
+	align-items: right;
+	flex-direction: row;
+	flex-wrap: no-wrap;
+	text-align: center;
+	
+	
+}
+
+header ul li
+{
+	list-style: none;
+	margin-right: 30px;
+	cursor: pointer;
+}
+
+header ul li a
+{
+	text-decoration: none;
+	font-size: 18px;
+	color: #fff;
+}
+
+header ul li a:after {
+    transition: all ease-in-out .2s;
+    background: none repeat scroll 0 0 #ffffff;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #ff0158;
+}
+
+header ul li a:hover:after {
+    width: 100%;
+}
+
+header ul li .h.active
+{
+	color: #ff0158;
+}
+
+header ul li .h.active:after
+{
+	height: 0px;
+}
+
+.content
+{
+	height: 90vh;
+	background: url(../img/bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	flex-direction: column;
+}
+
+.content h1
+{
+	font-size: 4em;
+	position: relative;
+	bottom: 40px;
+	font-weight: 200;
+}
+
+.content p
+{
+	bottom: 40px;
+	position: relative;
+	font-size: 56px;
+	font-weight: 700;
+}
+
+.content #stuff
+{
+	font-size: 18px;
+	font-weight: 600;
+	color: #696969;
+	margin-top: 5px;
+
+}
+
+.content button
+{
+	background: #ff0158;
+	color: #fff;
+	outline: none;
+	border: none;
+	border-radius: 40px;
+	width: 180px;
+	height: 50px;
+	font-size: 18px;
+	font-weight: 600;
+	text-align: center;
+	cursor: pointer;
+}
+
+.content button:hover
+{
+	background: #c71653;
+	transition: .5s;
+	color: #f2f2f2;
+}
+
+.choose
+{
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	text-align: left;
+	margin-left: 100px;
+	margin-top: 30px;
+	background: url(../img/bg2.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.choose h1
+{
+	font-size: 3em;
+	font-weight: 200;
+}
+
+.choose .chooseTitle
+{
+	font-weight: 700;
+	border-bottom: 5px solid #ff0158;
+	font-size: 4em;
+	max-width: 4.7em;
+}
+
+.choose p
+{
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+.choose h2
+{
+	font-weight: 400;
+	margin-top: 20px;
+}
+
+.features
+{
+	margin-top: 100px;
+	background: url(../img/bg3.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	color: #fff;
+	padding-top: 50px;
+	padding-bottom: 75px;
+}
+@media (max-width: 1000px) {
+	.feature{
+		height: 1000px;
+		
+	}
+	
+}
+@media (min-width: 1000px) {
+	.feature{
+		height: 750px;
+		
+	}
+	
+}
+
+.featuresTitle
+{
+	text-align: center;
+}
+
+.featuresTitle h1
+{
+	font-size: 3em;
+}
+
+.featuresTitle h1 span
+{
+	color: #ff0158;
+	margin-left: 10px;
+}
+
+.featureCardWrapper
+{
+	margin-left: 100px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.featureCard
+{
+	max-width: 300px;
+	margin-top: 50px;
+	margin-right: 10px;
+	padding: 20px;
+	justify-content: space-between;
+	border-bottom: 2px solid white;
+}
+
+.featureCard p
+{
+	font-weight: 300;
+
+}
+
+.featureCard button
+{
+	outline: none;
+	border: none;
+	height: 40px;
+	border-radius: 20px;
+	margin-top: 20px;
+	background: #ff0158;
+	width: 150px;
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+	position: relative;
+	bottom: 5px;
+}
+
+.featureCard button:hover
+{
+	background: #c71653;
+	transition: .5s;
+	color: #f2f2f2;
+}
+
+.contact
+{
+	margin-top: 100px;
+	height: 80vh;
+}
+
+.contactTitle
+{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+}
+
+.contactTitle h1
+{
+	font-size: 3.5em;
+}
+
+.contactTitle p
+{
+	font-weight: 300;
+	font-size: 18px;
+}
+
+.contactTitle p span
+{
+	color: #ff0158;
+}
+
+.contactBlock
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-top: 40px;
+}
+
+.contactBlock input
+{
+	margin-bottom: 5px;
+	outline: none;
+	border: none;
+	background: rgb(245, 245, 245);
+	padding: 20px;
+	width: 800px;
+	height: 60px;
+	border-radius: 5px;
+}
+
+.contactBlock textarea
+{
+	resize: none;
+	width: 800px;
+	height: 200px;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+	background: rgb(245, 245, 245);
+	padding: 20px;
+}
+
+.contactBlock button
+{
+	margin-top: 20px;
+	width: 200px;
+	height: 55px;
+	background: #ff0158;
+	outline: none;
+	border: none;
+	border-radius: 40px;
+	color: #fff;
+	font-weight: 600;
+	text-align: center;
+	cursor: pointer;
+	font-size: 17px;
+}
+
+
+.contactBlock button:hover
+{
+	background: #c71653;
+	transition: .5s;
+	color: #f2f2f2;
+}
+
+.follow
+{
+	margin-top: 50px;
+	background: url(../img/bg4.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 80vh;
+	color: #fff;
+}
+
+.followTitle
+{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	padding-top: 60px;
+}
+
+.followTitle h1
+{
+	font-size: 4em;
+}
+
+.followTitle p
+{
+	font-weight: 400;
+	color: #f5f5f5;
+}
+
+.followBlock
+{
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+.followBlock .sm
+{
+	margin-right: 100px;
+	cursor: pointer;
+}
+
+.followBlock .sm i
+{
+	font-size: 4em;
+}
+
+.followBlock .sm p
+{
+	margin-top: 30px;
+}
+
+.followBlock .fa-facebook-f:hover
+{
+	color: rgb(21, 163, 250);
+}
+
+.followBlock .fa-instagram:hover
+{
+	color: rgb(238, 91, 0);
+}
+
+.followBlock .fa-twitter:hover
+{
+	color: rgb(29, 161, 242);
+}
+
+.followBlock .fa-youtube:hover
+{
+	color: rgb(255, 0, 0);
+}
+
+.followBlock .fa-envelope:hover
+{
+	color: rgb(52, 168, 83);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}*/
+
+/* Track 
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+}
+ 
+/* Handle 
+::-webkit-scrollbar-thumb {
+  background: #ff0158; 
+  border-radius: 8px;
+}
+
+/* Handle on hover 
+::-webkit-scrollbar-thumb:hover {
+  background: #ff0158; 
+}
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*
+{
+	font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;
+}
+header
+{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	text-align: center;
+	padding-top: 30px;
+	padding-left: 40px;
+	background: rgb(3, 3, 14);
+	z-index: 10000;
+	color: #fff;
+	user-select: none;
+	transition: .4s ease-in-out;
+}
+header h1
+{
+	margin-right: 60px;
+	cursor: pointer;
+}
+@media (min-width: 1000px) {
+	header h1 {
+		margin-right: 50%;
+	}
+	header ul li a{
+		margin-top: 100px;
+		margin-right: 100px;
+	}
+}
+header ul
+{
+	display: flex;
+	align-items: right;
+	flex-direction: row;
+	flex-wrap: no-wrap;
+	text-align: center;
+	
+	
+}
+
+header ul li
+{
+	list-style: none;
+	margin-right: 30px;
+	cursor: pointer;
+}
+
+header ul li a
+{
+	text-decoration: none;
+	font-size: 18px;
+	color: #fff;
+}
+
+header ul li a:after {
+    transition: all ease-in-out .2s;
+    background: none repeat scroll 0 0 #ffffff;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #ff0158;
+}
+
+.content
+{
+	height: 90vh;
+	background: url(../img/bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	flex-direction: column;
+}
+
+.content h1
+{
+	font-size: 4em;
+	position: relative;
+	bottom: 40px;
+	font-weight: 200;
+}
+
+.content p
+{
+	bottom: 40px;
+	position: relative;
+	font-size: 56px;
+	font-weight: 700;
+}
+
+.content #stuff
+{
+	font-size: 18px;
+	font-weight: 600;
+	color: #696969;
+	margin-top: 5px;
+
+}
+
+.content button
+{
+	background: #ff0158;
+	color: #fff;
+	outline: none;
+	border: none;
+	border-radius: 40px;
+	width: 180px;
+	height: 50px;
+	font-size: 18px;
+	font-weight: 600;
+	text-align: center;
+	cursor: pointer;
+}
+
+.content button:hover
+{
+	background: #c71653;
+	transition: .5s;
+	color: #f2f2f2;
+}
+
+header ul li a select{
+    list-style: none;
+}
+
+header ul li a:hover:after {
+    width: 100%;
+}
+
+header ul li .h.active
+{
+	color: #ff0158;
+}
+
+header ul li .h.active:after
+{
+	height: 0px;
+}
+aside{
+	max-width: max-content;
+	
+}
+.box-shadow-class {
+    
+    padding-top: 50px;
+    padding-bottom: 20px;
+    min-height: max-content;
+	max-width: max-content;
+    /*display: flex;
+    flex-direction: column;*/
+	
+  }
+  .box-shadow-class h2{
+	  padding-bottom: 10px;
+      text-align: center;
+      color: black;
+
+  }
+  .box-shadow-class button{
+      color: black;
+      border-radius: 10px;
+      background-color: rgb(211, 199, 199);
+      /*box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);*/
+  }
+  .covid-canvas{
+    position: relative;
+    //left:250px;
+  }
+  .view-btn-charts {
+    background: var(--lighter-grey);
+    width: 200px;
+    border-radius: 6px;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 10px 10px;
+    padding: 5px 40px;
+    color: black;
+	border: 0;
+    text-align: center;
+  }
+  .chart-covid-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    color: var(--dark);
+    grid-row-gap: 20px;
+  }
+  button:hover {
+    background-color: rgb(14, 13, 13);
+    color: red;
+    /*border: 3px solid rgb(71, 57, 52);*/
+  }
+  .box-shadow-class .active-button {
+    background-color: rgb(14, 13, 13);
+    color: red;
+  }

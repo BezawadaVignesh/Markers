@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+	<title>Covid | Markers</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/0b1453f29b.js" crossorigin="anonymous"></script>
+	<link rel='icon' href='{% static "img/logo.png" %}' type="image/png">
+	{% endblock %}
+{% block header %}
+<header class="header">
+  <h1>Markers</h1>
+  <ul>
+    <li><a class="h" id="homeNav" href="{% url 'home' %}">Home</a></li>
+  </ul>
+</header>
+{% endblock %}
+
+{% block contant %}
+
+
+<!--link rel="stylesheet" href="{% static 'css/costyle.css' %}"-->
+<!--main class="chart-covid-container"-->
+<aside class="box-shadow-class">
+  <h2>Trending</h2>
+  <a href="{% url 'covid-chart' %}"><button class="view-btn-charts">COVID 19</button></a>
+  <a href="{% url 'prolang-chart' %}"><button class="view-btn-charts active-button">Programing
+          Languages</button></a>
+  <a href="{% url 'ide-chart' %}"><button class="view-btn-charts">IDE Ranking</button></a>
+  <a href="{% url 'db-chart' %}"><button class="view-btn-charts">Data
+          Bases</button></a>
+  <a href="{% url 'anime-chart' %}"><button class="view-btn-charts">Anime</button></a>
+  <a href="{% url 'website-chart' %}"><button class="view-btn-charts">Websites</button></a>
+  </aside>
+<section class="ide-canvas" style="padding-bottom: 100px;padding-top: 50px;">
+    <canvas id="bar-chart" style="min-width: max-content;"></canvas>
+</section>
+<!--/main-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!--script src="{% static 'js/prolan.js' %}">
+    
+  </script-->
+  <script type="text/javascript">
+      
+  window.onload = function() 
+  {
+    //var ctx = document.getElementById('pie-chart').getContext('2d');
+    window.myBar = new Chart(document.getElementById('bar-chart').getContext('2d'), 
+    {
+        type: 'horizontalBar',
+        data: {
+            labels: {{bar_labels|safe}},
+            datasets: [{
+                data: {{bar_data|safe}},
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+
+                ],
+                label: "Share percentage",
+                borderWidth: 1
+            }]
+        },
+        options: {            
+            title: {
+              display: true,
+              position: "top",
+              text: "Share % of programming language",
+
+          },
+          legend: {
+              display: true,
+              position: "bottom",
+          },
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        offsetGridLines: true
+                    }
+                }]
+            }
+        }
+    }
+    )
+    
+  };
+   
+  </script>
+
+{% endblock %}
